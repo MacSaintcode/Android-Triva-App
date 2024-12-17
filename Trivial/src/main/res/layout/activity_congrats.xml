@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".congrats"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:src="@drawable/oip"
+        android:id="@+id/vid"
+        >
+    </ImageView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_marginTop="70sp"
+        android:id="@+id/continu"
+        android:text="Continue"
+        android:textSize="25sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:layout_below="@+id/vid"
+
+        >
+
+    </Button>
+
+</RelativeLayout>

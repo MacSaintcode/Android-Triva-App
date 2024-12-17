@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".register_login"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_marginTop="20sp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:src="@drawable/arrow"
+            android:layout_marginLeft="5sp"
+            android:focusable="false"
+            >
+        </ImageView>
+
+
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="match_parent"
+            android:src="@drawable/anoda1"
+            android:layout_toLeftOf="@+id/Questionshead"
+            android:layout_marginLeft="7sp"
+            android:focusable="false"
+            android:alpha="0.7">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/Questionshead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Trivia"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="190sp"
+            android:hint="Username"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:id="@+id/user"
+            >
+        </EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40sp"
+            android:layout_marginTop="50sp"
+            android:textAlignment="center"
+            android:layout_below="@+id/user"
+            android:hint="Password"
+            android:layout_marginRight="40sp"
+            android:id="@id/passcode"
+            android:textSize="20sp"
+            >
+        </EditText>
+        <TextView
+            android:id="@+id/fpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            android:textColor="@color/black"
+            android:layout_below="@+id/passcode"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40sp"
+            android:textStyle="italic"
+            >
+
+        </TextView>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="60sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="120sp"
+        android:layout_marginRight="120sp"
+        android:textSize="20sp"
+        android:text="Login"
+        >
+    </Button>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/caccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New User? Create Account"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            >
+
+        </TextView>
+    </RelativeLayout>
+
+
+</LinearLayout>

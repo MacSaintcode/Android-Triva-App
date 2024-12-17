@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainMenu">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:layout_toStartOf="@+id/head"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:alpha="0.7"
+            android:focusable="false"
+            android:src="@drawable/anoda1">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:layout_centerHorizontal="true"
+            android:text="Trivia"
+            android:textSize="45sp"
+            android:textStyle="bold">
+
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100sp"
+            android:layout_marginRight="100sp"
+            android:height="70sp"
+            android:text="@string/play"
+            android:textSize="25sp"
+            android:textStyle="bold">
+
+        </Button>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/play"
+            android:layout_marginLeft="80sp"
+            android:layout_marginRight="80sp"
+            android:height="70sp"
+            android:layout_marginTop="20sp"
+            android:text="@string/leaderboard"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:id="@+id/leader">
+
+        </Button>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>
