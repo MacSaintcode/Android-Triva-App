@@ -42,6 +42,7 @@ public class ForgotPassword extends AppCompatActivity {
             public void onClick(View view) {
                 Intent call=new Intent(ForgotPassword.this,register_login.class);
                 startActivity(call);
+                finish();
             }
         });
 
@@ -62,6 +63,7 @@ public class ForgotPassword extends AppCompatActivity {
                         Toast.makeText(ForgotPassword.this, "Password Changed!", Toast.LENGTH_SHORT).show();
                         Intent call=new Intent(ForgotPassword.this,register_login.class);
                         startActivity(call);
+                        finish();
 
                     } else if (DBHandler.check(username.getText().toString(),pass.getText().toString())) {
                         Toast.makeText(ForgotPassword.this, "Use a different password!", Toast.LENGTH_SHORT).show();

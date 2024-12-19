@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="vertical"
-    tools:context=".New_user"
+    tools:context=".New_User"
 
     >
 
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70sp"
-        android:layout_marginTop="20sp">
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp">
 
         <ImageView
             android:id="@+id/back"
-            android:layout_width="45sp"
-            android:layout_height="70sp"
+            android:layout_width="45dp"
+            android:layout_height="70dp"
             android:src="@drawable/arrow"
-            android:layout_marginLeft="5sp"
+            android:layout_marginLeft="5dp"
             android:focusable="false"
             >
         </ImageView>
@@ -28,11 +29,11 @@
 
 
         <ImageView
-            android:layout_width="70sp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:src="@drawable/anoda1"
             android:layout_toLeftOf="@+id/Questionshead"
-            android:layout_marginLeft="7sp"
+            android:layout_marginLeft="7dp"
             android:focusable="false"
             android:alpha="0.7">
         </ImageView>
@@ -48,88 +49,84 @@
 
 
     </RelativeLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_marginBottom="0dp">
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
-            android:layout_marginRight="40sp"
-            android:hint="Personal Name"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:id="@+id/name"
-            >
-        </EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
-            android:layout_marginRight="40sp"
-            android:layout_marginTop="50sp"
-            android:hint="Phone Number"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:id="@+id/phone"
-            >
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        </EditText>
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:hint="Personal Name"
+                android:textAlignment="center"
+                android:textSize="20sp"></EditText>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
-            android:layout_marginTop="50sp"
-            android:textAlignment="center"
-            android:hint="Username"
-            android:textSize="20sp"
-            android:layout_marginRight="40sp"
-            android:id="@+id/username"
-            >
-        </EditText>
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="40dp"
+                android:hint="Phone Number"
+                android:textAlignment="center"
+                android:textSize="20sp">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
-            android:layout_marginTop="50sp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:hint="Password"
-            android:layout_marginRight="40sp"
-            android:id="@+id/pass"
-            >
-        </EditText>
+            </EditText>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
-            android:layout_marginTop="50sp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:hint="Confirm Password"
-            android:layout_marginRight="40sp"
-            android:id="@+id/cpass">
-        </EditText>
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="40dp"
+                android:hint="Username"
+                android:textAlignment="center"
+                android:textSize="20sp"></EditText>
 
-        <Button
-            android:id="@+id/post"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="60sp"
-            android:layout_marginTop="20sp"
-            android:layout_marginLeft="120sp"
-            android:layout_marginRight="120sp"
-            android:textSize="20sp"
-            android:text="@string/signup"
-            >
-        </Button>
-    </LinearLayout>
+            <EditText
+                android:id="@+id/pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="40dp"
+                android:hint="Password"
+                android:textAlignment="center"
+                android:textSize="20sp"></EditText>
 
+            <EditText
+                android:id="@+id/cpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="40dp"
+                android:hint="Confirm Password"
+                android:textAlignment="center"
+                android:textSize="20sp"></EditText>
+
+            <Button
+                android:id="@+id/post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="120dp"
+                android:height="60dp"
+                android:text="@string/signup"
+                android:layout_marginBottom="20dp"
+                android:textSize="20dp"></Button>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

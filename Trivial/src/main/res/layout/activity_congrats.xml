@@ -5,30 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".congrats"
-    android:gravity="center"
     >
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200sp"
-        android:src="@drawable/oip"
-        android:id="@+id/vid"
-        >
-    </ImageView>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60sp"
-        android:layout_marginTop="70sp"
-        android:id="@+id/continu"
-        android:text="Continue"
-        android:textSize="25sp"
-        android:layout_marginRight="40sp"
-        android:layout_marginLeft="40sp"
-        android:layout_below="@+id/vid"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
 
-        >
+            <ImageView
+                android:id="@+id/vid"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/oip"></ImageView>
 
-    </Button>
-
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="70dp"
+                android:id="@+id/continu"
+                android:text="Continue"
+                android:textSize="25sp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/vid"
+                >
+            </Button>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

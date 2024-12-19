@@ -17,37 +17,74 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainMenu extends AppCompatActivity {
 
     private Button play;
     private Button leaderboard;
     boolean Exit=false;
+
+    ImageView logout;
     private DBHandler DBHandler;
     int counter=0;
+    Intent call;
 
+    String logged;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+
+
         play=findViewById(R.id.play);
         leaderboard=findViewById(R.id.leader);
+        logout=findViewById(R.id.logout);
 
 
+        call = getIntent();
+        logged= call.getStringExtra("username");
+        if(!(logged==null||logged.isBlank())){
+            logout.setVisibility(View.VISIBLE);
+        }
+        System.out.println(logged+"this is me");
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent call=new Intent(MainMenu.this,register_login.class);
-                startActivity(call);
+                if (logged==null||logged.isBlank() ){
+                    call=new Intent(MainMenu.this,register_login.class);
+                    startActivity(call);
+                    finish();
+                }
+                else {
+                    call=new Intent(MainMenu.this, MainGame.class);
+                    call.putExtra("username",logged);
+                    startActivity(call);
+                    finish();
+                }
+
+
             }
         });
         leaderboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent call=new Intent(MainMenu.this,Leaderboard.class);
-
+                call=new Intent(MainMenu.this,Leaderboard.class);
+                call.putExtra("username",logged);
                 startActivity(call);
+                finish();
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainMenu.this, logged+ " has  been signed out!", Toast.LENGTH_SHORT).show();
+                logged="";
+                logout.setVisibility(View.INVISIBLE);
+
             }
         });
     }

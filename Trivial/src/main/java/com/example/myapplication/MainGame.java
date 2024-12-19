@@ -136,7 +136,7 @@ public class MainGame extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        time.cancel();
+
         if (Exit){
             super.onBackPressed();
             return;
@@ -154,7 +154,9 @@ public class MainGame extends AppCompatActivity {
                         "Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                time.cancel();
                                 Intent cal=new Intent(MainGame.this,MainMenu.class);
+                                cal.putExtra("username",sc);
                                 startActivity(cal);
                                 finish();
                             }
@@ -162,7 +164,7 @@ public class MainGame extends AppCompatActivity {
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        time.start();
+//                        time.start();
                     }
 
                 }).show();
@@ -190,7 +192,9 @@ public class MainGame extends AppCompatActivity {
 
                 }else {
                     ca=new Intent(MainGame.this,congrats.class);
+                    ca.putExtra("username",sc);
                     startActivity(ca);
+                    finish();
                 }
             }
         }, 1000);
@@ -264,7 +268,6 @@ public class MainGame extends AppCompatActivity {
             public void onFinish() {
             }
         }.start();
-
     }
     Button correction(){
         if (Answer4.getText().toString().equalsIgnoreCase(rans[ci])){

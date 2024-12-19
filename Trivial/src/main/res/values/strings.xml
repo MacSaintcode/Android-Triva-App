@@ -16,4 +16,9 @@
     <string name="play">Play</string>
     <string name="change_password">Change Password</string>
     <string name="confirm">Confirm</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="trivia">Trivia</string>
+    <string name="new_user_create_account">New User? Create Account</string>
+    <string name="login">Login</string>
 </resources>

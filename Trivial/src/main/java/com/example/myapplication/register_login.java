@@ -41,6 +41,7 @@ public class register_login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent call=new Intent(register_login.this,MainMenu.class);
                 startActivity(call);
+                finish();
             }
         });
         forgot.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +49,7 @@ public class register_login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent call=new Intent(register_login.this,ForgotPassword.class);
                 startActivity(call);
+                finish();
             }
         });
 
@@ -56,6 +58,7 @@ public class register_login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent call=new Intent(register_login.this,New_User.class);
                 startActivity(call);
+                finish();
             }
         });
 
@@ -73,6 +76,7 @@ public class register_login extends AppCompatActivity {
                     call=new Intent(register_login.this, MainGame.class);
                     call.putExtra("username",use);
                     startActivity(call);
+                    finish();
 
                 }
                 else {
@@ -81,6 +85,7 @@ public class register_login extends AppCompatActivity {
                         Toast.makeText(register_login.this, "User Does Not Exist!", Toast.LENGTH_SHORT).show();
                         Intent call=new Intent(register_login.this,MainMenu.class);
                         startActivity(call);
+                        finish();
                     }else {
                         Toast.makeText(register_login.this, "User Does Not Exist!", Toast.LENGTH_SHORT).show();
                         Toast.makeText(register_login.this, "You Have " + n + " More Tries!", Toast.LENGTH_SHORT).show();

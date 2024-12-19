@@ -43,6 +43,7 @@ public class New_User extends AppCompatActivity {
             public void onClick(View view) {
                 Intent call=new Intent(New_User.this,register_login.class);
                 startActivity(call);
+                finish();
             }
         });
 
@@ -66,6 +67,7 @@ public class New_User extends AppCompatActivity {
                         Toast.makeText(New_User.this, "Registered Sucessfully", Toast.LENGTH_SHORT).show();
                         Intent call = new Intent(New_User.this, register_login.class);
                         startActivity(call);
+                        finish();
                     }
                 }
             }
