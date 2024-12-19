@@ -33,6 +33,8 @@ public class MainMenu extends AppCompatActivity {
     int counter=0;
     Intent call;
 
+    String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,17 +45,16 @@ public class MainMenu extends AppCompatActivity {
         logout=findViewById(R.id.logout);
 
         SharedPreferences storage = getSharedPreferences("logged_in", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = storage.edit();
-        String username = storage.getString("username", "");
+        username = storage.getString("username", "");
         System.out.println(username);
 
-        if(!(username==null||username.isBlank())){
+        if(!(username.isBlank())){
             logout.setVisibility(View.VISIBLE);
         }
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username==null||username.isBlank() ){
+                if (username.isBlank() ){
                     call=new Intent(MainMenu.this,register_login.class);
                     startActivity(call);
                     finish();
@@ -83,6 +84,7 @@ public class MainMenu extends AppCompatActivity {
                 SharedPreferences.Editor editor = storage.edit();
                 editor.putString("username", "");
                 editor.apply();
+                username=storage.getString("username", "");
                 logout.setVisibility(View.INVISIBLE);
 
             }

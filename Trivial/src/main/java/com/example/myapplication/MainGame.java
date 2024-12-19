@@ -206,7 +206,6 @@ public class MainGame extends AppCompatActivity {
 //      trigger intent to go back to main menu
         if(!movement()){
             SharedPreferences storage = getSharedPreferences("logged_in", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = storage.edit();
             String username = storage.getString("username", "");
             String scor=score.getText().toString();
             dbHandler.updatescore(username,scor);
