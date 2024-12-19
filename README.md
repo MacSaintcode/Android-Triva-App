@@ -36,3 +36,9 @@ the questions and answers are stored in a single dimensional array while the ans
 each question index is the same as the options array index, 
 example: {index 0 question,index1 question} {{index 0 option1,index 0 option2,index 0 option3},{index 1 option1,index 1 option1,index 1 option1}} 
 so the game starts from the 0 indexes to the last question index the answers are stored in a single-dimensional array, so when the user chooses an option and confirms it the text of the button is compared to the answer if they are the same the user is awarded a 5-points and the button turns green for 1-second then the question moves to the next one in the array, if there isn't any question in the array the user score is updated to the total score and the congrats layout is displayed, but if the user clicks the back button while the game is running a confirmation dialogue would pop up asking "Do you want to quit?" if the yes option is clicked the user progress would be lost and the score would not be recorded
+
+
+# NEW UPDATE TO THE TRIVIAL APP
+
+just added a logout feature so the players don't have to keep logging in before he/she plays the game,
+so untile the player is done playing with his account he/she can just click play and it takes you to the game, and when the player is done a logout feature is provided in cases anothe player wants to play on the same device
