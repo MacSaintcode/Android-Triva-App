@@ -3,7 +3,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,8 @@ public class register_login extends AppCompatActivity {
     private TextView account;
     private  EditText passcod;
     private EditText users;
+
+    
 
     private Button login;
     private DBHandler DBHandler;
@@ -74,7 +78,10 @@ public class register_login extends AppCompatActivity {
                     Intent call;
                     use=users.getText().toString();
                     call=new Intent(register_login.this, MainGame.class);
-                    call.putExtra("username",use);
+                    SharedPreferences storage = getSharedPreferences("logged_in", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = storage.edit();
+                    editor.putString("username", use);
+                    editor.apply();
                     startActivity(call);
                     finish();
 

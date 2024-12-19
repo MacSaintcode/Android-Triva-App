@@ -68,13 +68,11 @@ public class Leaderboard extends AppCompatActivity {
         dbHandler = new DBHandler(this);
 //        13 top players
 
-        Intent call=getIntent();
-         logged=call.getStringExtra("username");
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent call=new Intent(Leaderboard.this,MainMenu.class);
-                call.putExtra("username",logged);
+
                 startActivity(call);
                 finish();
             }
@@ -92,7 +90,6 @@ public class Leaderboard extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent call=new Intent(Leaderboard.this,MainMenu.class);
-        call.putExtra("username",logged);
         startActivity(call);
         finish();
     }

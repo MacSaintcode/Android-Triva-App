@@ -3,8 +3,10 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -65,7 +67,7 @@ public class MainGame extends AppCompatActivity {
     Intent ca;
     Boolean Exit=false;
 
-    String sc;
+//    String sc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +85,7 @@ public class MainGame extends AppCompatActivity {
         confirm=findViewById(R.id.confirm);
         dbHandler = new DBHandler(this);
         ca = getIntent();
-        sc= ca.getStringExtra("username");
+//        sc= ca.getStringExtra("username");
         chossen=confirm;
         cchossen=confirm;
 
@@ -156,7 +158,7 @@ public class MainGame extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 time.cancel();
                                 Intent cal=new Intent(MainGame.this,MainMenu.class);
-                                cal.putExtra("username",sc);
+//                                cal.putExtra("username",sc);
                                 startActivity(cal);
                                 finish();
                             }
@@ -192,7 +194,7 @@ public class MainGame extends AppCompatActivity {
 
                 }else {
                     ca=new Intent(MainGame.this,congrats.class);
-                    ca.putExtra("username",sc);
+//                    ca.putExtra("username",sc);
                     startActivity(ca);
                     finish();
                 }
@@ -203,8 +205,11 @@ public class MainGame extends AppCompatActivity {
 //      congratulations on finising the trivial questions
 //      trigger intent to go back to main menu
         if(!movement()){
+            SharedPreferences storage = getSharedPreferences("logged_in", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = storage.edit();
+            String username = storage.getString("username", "");
             String scor=score.getText().toString();
-            dbHandler.updatescore(sc,scor);
+            dbHandler.updatescore(username,scor);
             return true;
         }
         return false;

@@ -28,16 +28,11 @@ public class congrats extends AppCompatActivity {
         go=findViewById(R.id.continu);
         view =findViewById(R.id.vid);
 
-        call=getIntent();
-        logged= call.getStringExtra("username");
-        System.out.println(logged);
-
 
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 call=new Intent(congrats.this,MainMenu.class);
-                call.putExtra("username",logged);
                 startActivity(call);
                 finish();
             }
@@ -48,7 +43,7 @@ public class congrats extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         Intent cal=new Intent(congrats.this,MainMenu.class);
-        cal.putExtra("username",logged);
+
         startActivity(cal);
         finish();
     }

@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,36 +33,33 @@ public class MainMenu extends AppCompatActivity {
     int counter=0;
     Intent call;
 
-    String logged;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-
-
         play=findViewById(R.id.play);
         leaderboard=findViewById(R.id.leader);
         logout=findViewById(R.id.logout);
 
+        SharedPreferences storage = getSharedPreferences("logged_in", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = storage.edit();
+        String username = storage.getString("username", "");
+        System.out.println(username);
 
-        call = getIntent();
-        logged= call.getStringExtra("username");
-        if(!(logged==null||logged.isBlank())){
+        if(!(username==null||username.isBlank())){
             logout.setVisibility(View.VISIBLE);
         }
-        System.out.println(logged+"this is me");
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (logged==null||logged.isBlank() ){
+                if (username==null||username.isBlank() ){
                     call=new Intent(MainMenu.this,register_login.class);
                     startActivity(call);
                     finish();
                 }
                 else {
                     call=new Intent(MainMenu.this, MainGame.class);
-                    call.putExtra("username",logged);
                     startActivity(call);
                     finish();
                 }
@@ -72,7 +71,6 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 call=new Intent(MainMenu.this,Leaderboard.class);
-                call.putExtra("username",logged);
                 startActivity(call);
                 finish();
             }
@@ -81,8 +79,10 @@ public class MainMenu extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainMenu.this, logged+ " has  been signed out!", Toast.LENGTH_SHORT).show();
-                logged="";
+                Toast.makeText(MainMenu.this, username+ " has  been signed out!", Toast.LENGTH_SHORT).show();
+                SharedPreferences.Editor editor = storage.edit();
+                editor.putString("username", "");
+                editor.apply();
                 logout.setVisibility(View.INVISIBLE);
 
             }
