@@ -2,6 +2,7 @@
 
 
 Project video URL: https://youtu.be/jXhlcvCa5HU?si=SnNYraojAsY-kwTf
+video would be updated with the game new features soon.
 
 it comprises six(6) layouts, the main menu, leaderboard, login&register, forgot password, new user(Signup), and congrats.
 the main menu has (2) buttons with intent that direct the user to either the leaderboard layout or the login layout.
